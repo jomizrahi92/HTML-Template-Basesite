@@ -56,10 +56,7 @@
 	color: #666;
 }
 
-.top-links li i {
-	position: relative;
-	top: 1px;
-}
+.top-links li i { vertical-align: top; }
 
 .top-links li i.icon-angle-down { margin: 0 0 0 5px !important; }
 

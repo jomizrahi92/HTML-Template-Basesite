@@ -68,6 +68,90 @@
 	}
 }
 
+
+/* Portfolio - Filter: Style 2
+-----------------------------------------------------------------*/
+
+.portfolio-filter.style-2,
+.portfolio-filter.style-3,
+.portfolio-filter.style-4 {
+	border: none;
+	border-radius: 0;
+}
+
+.portfolio-filter.style-2 li,
+.portfolio-filter.style-3 li,
+.portfolio-filter.style-4 li { margin-bottom: 10px; }
+
+.portfolio-filter.style-2 li:not(:first-child),
+.portfolio-filter.style-3 li:not(:first-child) { margin-left: 10px; }
+
+.portfolio-filter.style-2 li a,
+.portfolio-filter.style-3 li a,
+.portfolio-filter.style-4 li a {
+	padding-top: 9px;
+	padding-bottom: 9px;
+	font-size: 14px;
+	line-height: 16px;
+	border-radius: 22px;
+	border: none;
+}
+
+.portfolio-filter.style-2 li.activeFilter a {
+	color: #FFF !important;
+	margin: 0;
+}
+
+
+/* Portfolio - Filter: Style 3
+-----------------------------------------------------------------*/
+
+.portfolio-filter.style-3 li a { border: 1px solid transparent; }
+
+.portfolio-filter.style-3 li.activeFilter a {
+	color: @theme-color !important;
+	border-color: @theme-color;
+	background-color: transparent;
+	margin: 0;
+}
+
+
+/* Portfolio - Filter: Style 4
+-----------------------------------------------------------------*/
+
+.portfolio-filter.style-4 li:not(:first-child) { margin-left: 30px; }
+
+.portfolio-filter.style-4 li a {
+	padding: 13px 5px;
+	font-size: 15px;
+	border-radius: 0;
+}
+
+.portfolio-filter.style-4 li a:after {
+	content: '';
+	position: absolute;
+	top: auto;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 2px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+.portfolio-filter.style-4 li.activeFilter a {
+	color: #444 !important;
+	background-color: transparent;
+	margin: 0;
+}
+
+.portfolio-filter.style-4 li.activeFilter a:after {
+	width: 100%;
+	left: 0%;
+	background-color: @theme-color;
+}
+
 /* Portfolio - Shuffle Icon
 -----------------------------------------------------------------*/
 
@@ -1721,5 +1805,6 @@ body {
 		width: 100%;
 		height: auto;
 	}
+	.portfolio-overlay { height: 100% !important; }
 }
 

@@ -29,3 +29,14 @@
 	}
 }
 
+.grid-container {
+	position: relative;
+	overflow: hidden;
+}
+
+body:not(.device-touch) .grid-container {
+	-webkit-transition: height .4s linear;
+	-o-transition: height .4s linear;
+	transition: height .4s linear;
+}
+

@@ -47,13 +47,19 @@ if( !$color OR !checkhexcolor( $color ) ) {
     Replace the HEX Code with your Desired Color HEX
 -----------------------------------------------------------------*/
 
-#page-menu.dots-menu nav li span:after,
-.title-block { border-left-color: <?php echo $color; ?>; }
+#page-menu.dots-menu nav li div:after,
+.title-block {
+	border-right-color: <?php echo $color; ?>;
+	border-left-color: transparent;
+}
 
-.title-block-right { border-right-color: <?php echo $color; ?>; }
+.title-block-right {
+	border-left-color: <?php echo $color; ?>;
+	border-right-color: transparent;
+}
 
 .fbox-effect.fbox-dark .fbox-icon i:after,
-.dark .fbox-effect.fbox-dark .fbox-icon i:after { box-shadow: 0 0 0 2px <?php echo $color; ?>; }
+.dark .fbox-effect.fbox-dark .fbox-icon i:after { box-shadow: 0 2px 0 0 <?php echo $color; ?>; }
 
 .fbox-border.fbox-effect.fbox-dark .fbox-icon i:hover,
 .fbox-border.fbox-effect.fbox-dark:hover .fbox-icon i,

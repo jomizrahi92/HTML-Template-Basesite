@@ -20,7 +20,7 @@ $color = "#1ABC9C"; // Change your Color Here
 
 function checkhexcolor($color) {
 
-    return preg_match('/^#[a-f0-9]{6}$/i', $color);
+	return preg_match('/^#[a-f0-9]{6}$/i', $color);
 
 }
 
@@ -31,20 +31,20 @@ function checkhexcolor($color) {
  ================================================================== */
 
 if( isset( $_GET[ 'color' ] ) AND $_GET[ 'color' ] != '' ) {
-    $color = "#" . $_GET[ 'color' ];
+	$color = "#" . $_GET[ 'color' ];
 }
 
 if( !$color OR !checkhexcolor( $color ) ) {
-    $color = "#1ABC9C";
+	$color = "#1ABC9C";
 }
 
 ?>
 
 
 /* ----------------------------------------------------------------
-    Colors
+	Colors
 
-    Replace the HEX Code with your Desired Color HEX
+	Replace the HEX Code with your Desired Color HEX
 -----------------------------------------------------------------*/
 
 
@@ -109,6 +109,7 @@ h6 > span:not(.nocolor),
 
 .color,
 .top-cart-item-desc a:hover,
+.portfolio-filter.style-3 li.activeFilter a,
 .faqlist li a:hover,
 .tagcloud a:hover,
 .dark .top-cart-item-desc a:hover,
@@ -130,8 +131,9 @@ h6 > span:not(.nocolor),
 #page-menu-wrap,
 #page-menu ul ul,
 #page-menu.dots-menu nav li.current a,
-#page-menu.dots-menu nav li .dots-menu-caption,
+#page-menu.dots-menu nav li div,
 .portfolio-filter li.activeFilter a,
+.portfolio-filter.style-4 li.activeFilter a:after,
 .portfolio-shuffle:hover,
 .entry-link:hover,
 .sale-flash,
@@ -182,7 +184,7 @@ input.switch-toggle-round:checked + label:before,
 .process-steps li.ui-tabs-active a,
 .sidenav > .ui-tabs-active > a,
 .sidenav > .ui-tabs-active > a:hover,
-.owl-carousel .owl-controls .owl-nav [class*=owl-]:hover,
+.owl-carousel .owl-nav [class*=owl-]:hover,
 .pagination > .active > a,
 .pagination > .active > span,
 .pagination > .active > a:hover,
@@ -193,6 +195,7 @@ input.switch-toggle-round:checked + label:before,
 #primary-menu.style-4 > ul > li:hover > a,
 #primary-menu.style-4 > ul > li.current > a,
 .top-cart-item-image:hover,
+.portfolio-filter.style-3 li.activeFilter a,
 .post-timeline .entry:hover .entry-timeline,
 .post-timeline .entry:hover .timeline-divider,
 .cart-product-thumbnail img:hover,
@@ -224,7 +227,7 @@ input.switch-toggle-round:checked + label:before,
 .irs-single:after,
 .irs-to:after { border-top-color: <?php echo $color; ?>; }
 
-#page-menu.dots-menu nav li .dots-menu-caption:after,
+#page-menu.dots-menu nav li div:after,
 .title-block { border-left-color: <?php echo $color; ?>; }
 
 .title-block-right { border-right-color: <?php echo $color; ?>; }
@@ -260,20 +263,20 @@ input.switch-toggle-round:checked + label:before,
 
 @media only screen and (max-width: 991px) {
 
-    body:not(.dark) #header:not(.dark) #header-wrap:not(.dark) #primary-menu > ul > li:hover a,
-    body:not(.dark) #header:not(.dark) #header-wrap:not(.dark) #primary-menu > ul > li.current a,
-    body:not(.dark) #header:not(.dark) #header-wrap:not(.dark) #primary-menu > div > ul > li:hover a,
-    body:not(.dark) #header:not(.dark) #header-wrap:not(.dark) #primary-menu > div > ul > li.current a,
-    #primary-menu ul ul li:hover > a,
-    #primary-menu ul li .mega-menu-content.style-2 > ul > li.mega-menu-title:hover > a,
-    #primary-menu ul li .mega-menu-content.style-2 > ul > li.mega-menu-title > a:hover { color: <?php echo $color; ?> !important; }
+	body:not(.dark) #header:not(.dark) #header-wrap:not(.dark) #primary-menu > ul > li:hover a,
+	body:not(.dark) #header:not(.dark) #header-wrap:not(.dark) #primary-menu > ul > li.current a,
+	body:not(.dark) #header:not(.dark) #header-wrap:not(.dark) #primary-menu > div > ul > li:hover a,
+	body:not(.dark) #header:not(.dark) #header-wrap:not(.dark) #primary-menu > div > ul > li.current a,
+	#primary-menu ul ul li:hover > a,
+	#primary-menu ul li .mega-menu-content.style-2 > ul > li.mega-menu-title:hover > a,
+	#primary-menu ul li .mega-menu-content.style-2 > ul > li.mega-menu-title > a:hover { color: <?php echo $color; ?> !important; }
 
-    #page-menu nav { background-color: <?php echo $color; ?>; }
+	#page-menu nav { background-color: <?php echo $color; ?>; }
 
 }
 
 
 @media only screen and (max-width: 767px) {
 
-    .portfolio-filter li a:hover { color: <?php echo $color; ?>; }
+	.portfolio-filter li a:hover { color: <?php echo $color; ?>; }
 .}

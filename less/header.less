@@ -285,7 +285,7 @@ body.no-superfish #primary-menu li:hover > .mega-menu-content { display: block; 
 	transition: all .2s ease-in-out;
 }
 
-#primary-menu ul ul li > a i { top: 0; }
+#primary-menu ul ul li > a i { vertical-align: middle; }
 
 #primary-menu ul ul li:hover > a {
 	background-color: #F9F9F9;
@@ -511,7 +511,9 @@ body:not(.device-sm):not(.device-xs):not(.device-xxs) #primary-menu.style-2.cent
 #primary-menu.style-6 > ul > li > a { position: relative; }
 
 #primary-menu.style-6 > ul > li > a:after,
-#primary-menu.style-6 > ul > li.current > a:after {
+#primary-menu.style-6 > ul > li.current > a:after,
+#primary-menu.style-6 > div > ul > li > a:after,
+#primary-menu.style-6 > div > ul > li.current > a:after {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -525,6 +527,8 @@ body:not(.device-sm):not(.device-xs):not(.device-xxs) #primary-menu.style-2.cent
 }
 
 #primary-menu.style-6 > ul > li.current > a:after,
+#primary-menu.style-6 > ul > li:hover > a:after,
+#primary-menu.style-6 > div > ul > li.current > a:after,
 #primary-menu.style-6 > ul > li:hover > a:after { width: 100%; }
 
 
@@ -600,6 +604,35 @@ body:not(.device-sm):not(.device-xs):not(.device-xxs) #primary-menu.style-2.cent
 	padding-top: 17px;
 	padding-bottom: 22px;
 }
+
+/* Primary Menu - Split Menu
+-----------------------------------------------------------------*/
+
+@media (min-width: 992px) {
+
+	#header.split-menu #logo {
+		position: absolute;
+		width: 100%;
+		text-align: center;
+		margin: 0;
+		float: none;
+		height: 100px;
+	}
+
+	#header.split-menu #logo a.standard-logo { display: inline-block; }
+
+}
+
+#header.split-menu #primary-menu {
+	float: none;
+	margin: 0;
+}
+
+#header.split-menu #primary-menu > ul { z-index: 199; }
+
+#header.split-menu #primary-menu > ul:first-child { float: left; }
+
+#header.split-menu #primary-menu > ul:last-child { float: right; }
 
 
 /* Primary Menu - Overlay Menu
@@ -718,7 +751,8 @@ body:not(.device-sm):not(.device-xs):not(.device-xxs) #primary-menu.style-2.cent
 
 #top-search,
 #top-cart,
-#side-panel-trigger {
+#side-panel-trigger,
+#top-account {
 	float: right;
 	margin: ( (@header-height - 20) / 2 ) 0 ( (@header-height - 20) / 2 ) 15px;
 }
@@ -727,7 +761,8 @@ body:not(.device-sm):not(.device-xs):not(.device-xxs) #primary-menu.style-2.cent
 
 #top-search a,
 #top-cart a,
-#side-panel-trigger a {
+#side-panel-trigger a,
+#top-account a {
 	display: block;
 	position: relative;
 	width: 14px;
@@ -968,6 +1003,48 @@ body:not(.device-sm):not(.device-xs):not(.device-xxs) #header.transparent-header
 
 
 /* ----------------------------------------------------------------
+	Top Account
+-----------------------------------------------------------------*/
+
+#top-account { margin: 32px 0 33px 20px; }
+
+#top-account a {
+	width: auto;
+	height: auto;
+}
+
+#top-account a span {
+	margin-left: 5px;
+	font-weight: 600;
+}
+
+#top-account a i.icon-angle-down {
+	margin-left: 5px;
+	font-size: 12px;
+}
+
+#top-account .dropdown-menu { padding: 10px 0; }
+
+#top-account .dropdown-menu li a {
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+	text-align: left;
+	line-height: 22px;
+}
+
+#top-account .dropdown-menu li a .badge {
+	display: block;
+	float: right;
+	margin: 2px 0 0 0;
+}
+
+#top-account .dropdown-menu li a i:last-child {
+	position: relative;
+	top: 1px;
+	margin-left: 5px;
+}
+
+/* ----------------------------------------------------------------
 	Sticky Header
 -----------------------------------------------------------------*/
 
@@ -1007,7 +1084,8 @@ body:not(.top-search-open) #header-wrap #logo,
 body:not(.top-search-open) #primary-menu > ul,
 body:not(.top-search-open) #primary-menu > .container > ul,
 body:not(.top-search-open) #top-cart,
-body:not(.top-search-open) #side-panel-trigger {
+body:not(.top-search-open) #side-panel-trigger,
+body:not(.top-search-open) #top-account {
 	opacity: 1;
 	-webkit-transition: height .4s ease, margin .4s ease, opacity .2s .2s ease;
 	-o-transition: height .4s ease, margin .4s ease, opacity .2s .2s ease;
@@ -1018,7 +1096,8 @@ body.top-search-open #header-wrap #logo,
 body.top-search-open #primary-menu > ul,
 body.top-search-open #primary-menu > .container > ul,
 body.top-search-open #top-cart,
-body.top-search-open #side-panel-trigger { opacity: 0; }
+body.top-search-open #side-panel-trigger,
+body.top-search-open #top-account { opacity: 0; }
 
 #header.sticky-header.semi-transparent { background-color: transparent; }
 
@@ -1062,6 +1141,11 @@ body.top-search-open #side-panel-trigger { opacity: 0; }
 #header.sticky-header:not(.static-sticky) #side-panel-trigger {
 	margin-top: @sticky-menu-padding + 1 !important;
 	margin-bottom: @sticky-menu-padding + 1 !important;
+}
+
+#header.sticky-header:not(.static-sticky) #top-account {
+	margin-top: 12px !important;
+	margin-bottom: 13px !important;
 }
 
 #header.sticky-header:not(.static-sticky) #top-cart .top-cart-content { top: 40px; }
@@ -1392,6 +1476,7 @@ body:not(.device-touch) #page-menu nav li a {
 	z-index: 10;
 	width: @side-header-width;
 	height: 100%;
+	height: calc(100vh);
 	background-color: @side-header-bg;
 	border: none;
 	border-right: 1px solid #EEE;
