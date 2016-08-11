@@ -13,7 +13,7 @@ $toemails[] = array(
 $message_success = 'Thank you for Confirming your RSVP.';
 
 // Add this only if you use reCaptcha with your Contact Forms
-$recaptcha_secret = 'your-recaptcha-secret-key'; // Your reCaptcha Secret
+$recaptcha_secret = ''; // Your reCaptcha Secret
 
 $mail = new PHPMailer();
 
